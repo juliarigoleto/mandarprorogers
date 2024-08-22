@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Times</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Selecione um Time</h1>
+        <select id="teamSelect">
+            <option value="">Escolha um time</option>
+            <option value="palmeiras">Palmeiras</option>
+            <option value="corinthians">Corinthians</option>
+            <option value="sao_paulo">São Paulo</option>
+            <option value="santos">Santos</option>
+            <option value="redbull">RedBull Bragantino</option>
+            <option value="vasco">Vasco da Gama</option>
+            <option value="botafogo">Botafogo</option>
+            <option value="fluminense">Fluminense</option>
+            <option value="flamengo">Flamengo</option>
+            <option value="atletico">Atlético Mineiro</option>
+            <option value="cruzeiro">Cruzeiro</option>
+            <option value="gremio">Grêmio</option>
+            <option value="internacional">Internacional</option>
+        </select>
+    </header>
+    <script>
+        document.getElementById('teamSelect').addEventListener('change', function() {
+            const team = this.value;
+            if (team) {
+                window.location.href = `team.html?team=${team}`;
+            }
+        });
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela com JavaScript</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabela Gerada com JavaScript</h2>
+    <div id="table-container"></div>
+
+    <script>
+        function criarTabela() {
+            // Cria o elemento da tabela
+            var tabela = document.createElement("table");
+
+            // Cabeçalho da tabela
+            var cabecalho = tabela.insertRow();
+            var colunas = ["Nome", "Idade", "País"];
+            for (var i = 0; i < colunas.length; i++) {
+                var th = document.createElement("th");
+                th.textContent = colunas[i];
+                cabecalho.appendChild(th);
+            }
+
+            // Corpo da tabela (linhas e células)
+            var dados = [
+                ["João", 25, "Brasil"],
+                ["Maria", 30, "Portugal"],
+                ["Pedro", 28, "Espanha"]
+            ];
+
+            for (var i = 0; i < dados.length; i++) {
+                var linha = tabela.insertRow();
+                for (var j = 0; j < dados[i].length; j++) {
+                    var celula = linha.insertCell();
+                    celula.textContent = dados[i][j];
+                }
+            }
+
+            // Adiciona a tabela ao container
+            document.getElementById("table-container").appendChild(tabela);
+        }
+
+        // Chama a função para criar a tabela ao carregar a página
+        criarTabela();
+    </script>
+</body>
+</html>
